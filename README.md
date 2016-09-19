@@ -6,3 +6,14 @@ DragonScript is our own programming language that you can use in your website. I
 
 #Version
 0.0.1-alpha (Pre-relase)
+
+#For devs
+##Syntax ideas
+###variable declaration
+```var (name) = (object),```
+Example:
+```var foo = "Hello, world!",```
+###Logging function
+```write(text),```
+Example:
+```write("Hello, world!"),```
