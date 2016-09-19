@@ -7,7 +7,7 @@
         margin: 0;
       }  
       #code_area {
-        width: 100vw;
+        width: 90vw;
         margin: 0;
         padding: 0;
         height: 50vh;
@@ -20,9 +20,19 @@
       #code_area:focus {
         outline: none;
       }
+      #side {
+        background-color: #999;
+        width: 10vw;
+        height: 100vh;
+        position: fixed;
+        margin: 0;
+        top: 0;
+        margin-left: 90vw;
+      }
     </style>
   </head>
   <body>
     <textarea id="code_area"></textarea>
+    <div id="side"></div>
   </body>
 </html>
