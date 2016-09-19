@@ -14,6 +14,4 @@ DragonScript is our own programming language that you can use in your website. I
 Example:
 ```var foo = "Hello, world!",```
 ###Logging function
-```write(text),```
-Example:
-```write("Hello, world!"),```
+```write(text, size=p),```
