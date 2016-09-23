@@ -10,8 +10,11 @@ DragonScript is our own programming language that you can use in your website. I
 #For devs
 ##Syntax ideas
 ###variable declaration
-```var (name) = (object),```
+```var ^(name) = (object),```
 Example:
-```var foo = "Hello, world!",```
+```var ^foo = "Hello, world!",```
+Reading Vars:
+```^foo",```
+
 ###Logging function
 ```write(text, size=p),```
