@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DragonScript</title>
-    <style>
-      @font-face { font-family: 'DragonDrop'; src: url('Scratch Pen.ttf'); } 
-      body {
-        margin: 0;
-      }  
-      #code_area {
-        width: 88.45vw;
-        margin: 0;
-        padding: 0;
-        height: 50vh;
-        background-color: #f8f8f8;
-        resize: none;
-        border: 10px solid #f0f0f0;
-        border-radius: 10px;
-        padding: 5px;
-        font-family: 'DragonDrop';
-        font-size: 20px;
-      }
-      #code_area:focus {
-        outline: none;
-      }
-      #side {
-        background-color: #999;
-        width: 10vw;
-        height: 100vh;
-        position: fixed;
-        margin: 0;
-        top: 0;
-        margin-left: 90vw;
-      }
-    </style>
-  </head>
-  <body>
-    <textarea id="code_area" spellcheck="false">\***
-    Welcome to DragonScript!
-    From the makers of DragonDrop
-    
-    Syntax guide:
-    dragon-drop-scratch.github.io/dragonscript/syntax.html
-***\</textarea>
-    <div id="side"></div>
-  </body>
+
+    <head>
+        <title>DragonScript</title>
+        <style>
+            @font-face {
+                font-family:'DragonDrop';
+                src: url('Scratch Pen.ttf');
+            }
+            body {
+                margin: 0;
+            }
+            #code_area {
+                width: 88.45vw;
+                margin: 0;
+                padding: 0;
+                height: 50vh;
+                background-color: #f8f8f8;
+                resize: none;
+                border: 10px solid #f0f0f0;
+                border-radius: 10px;
+                padding: 5px;
+                font-family:'DragonDrop';
+                font-size: 20px;
+            }
+            #code_area:focus {
+                outline: none;
+            }
+            #side {
+                background-color: #999;
+                width: 10vw;
+                height: 100vh;
+                position: fixed;
+                margin: 0;
+                top: 0;
+                margin-left: 90vw;
+            }
+        </style>
+    </head>
+
+    <body>
+        <textarea id="code_area" spellcheck="false">\*** Welcome to DragonScript! From the makers of DragonDrop Syntax guide: dragon-drop-scratch.github.io/dragonscript/syntax.html ***\
+        </textarea>
+        <div id="side"></div>
+        <script>
+            var textareas = document.getElementsByTagName('textarea');
+            var count = textareas.length;
+            for (var i = 0; i < count; i++) {
+                textareas[i].onkeydown = function(e) {
+                    if (e.keyCode == 9 || e.which == 9) {
+                        e.preventDefault();
+                        var s = this.selectionStart;
+                        this.value = this.value.substring(0, this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+                        this.selectionEnd = s + 1;
+                    }
+                }
+            }
+        </script>
+    </body>
+
 </html>
